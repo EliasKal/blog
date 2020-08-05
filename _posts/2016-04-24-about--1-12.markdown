@@ -1,0 +1,100 @@
+---
+layout: post
+title:  "About -1/12"
+date:   2016-04-24
+categories: mathematics
+---
+
+These notes are about the famous and odd result that the sum of all natural numbers is $-1/12$:
+
+$$1 + 2 + 3 + \ldots = - \frac{1}{12},$$
+
+or
+
+$$\sum_{n=0}^{\infty} n = - \frac{1}{12}.$$
+				
+This result and a proof was presented in a [Numberphille video](https://www.youtube.com/watch?v=w-I6XTVZXww). This video mentions a book about string theory \[[1](#ref_01), page 22\], which makes use of this result. In this book, the author arrives at the result by introducing a smoothing factor in the sum, as was also done by Casimir in his paper about the effect named after him \[[2](#ref_02)\]. However, Casimir did not calculate the value of the infinite sum, but the value of the difference between the infinite sum and an infinite integral, and this was found to be proportional to $-1/12$, up to some physical constants.
+
+In a simplified version, which is different in form (as also shown in a paper by Kingsbury \[[3](#ref_03)\]) but similar in concept, Casimir calculated the difference between
+
+$$S = \sum_{x=0}^{\infty} x$$
+
+and
+
+$$I = \int_{0}^{\infty} x dx.$$
+
+In order to solve this, he introduced a smoothing factor $e^{-\delta x}$ in both the sum and the integral:
+
+$$S' = \sum_{x=0}^{\infty} x e^{-\delta x}, \quad I' = \int_{0}^{\infty} x e^{-\delta x} dx.$$
+
+This smoothing factor has the property that when $\delta$ tends to $0$, the factor becomes $1$, and the sum and integral return to their original forms. Thus, this factor can be introduced in order for a result to be reached, and then $\delta$ can be set to $0$, in order to remove the effect of the smoothing factor.
+
+Casimir used the Euler-Maclaurin formula to evaluate the difference $S' - I'$, which, letting $f(x) = x e^{-\delta x}$, is (see [Wikipedia](https://en.wikipedia.org/wiki/Euler%E2%80%93Maclaurin_formula)):
+
+$$S' - I' = \sum_{k=1}^p \frac{B_k}{k!} \left ( f^{(k-1)}(\infty) - f^{(k-1)}(0) \right ),$$
+
+where $B_k$ is the $k$th Bernoulli number and $p$ is how many times function $f$ can be differentiated.
+
+However, here we will take another course, by evaluating the sum and the integral separately and then computing their difference, in a way similar to what is shown in a paper by Bordag et al. \[[4](#ref_04)\]
+
+The integral $I'$ is a special case of
+
+$$\int_{0}^{\infty} x^n e^{-\delta x} dx = \frac{\Gamma(n+1)}{\delta^{n+1}},$$
+
+for $n = 1$. So
+
+\begin{equation}
+	\label{integral_final}
+	I' = \int_{0}^{\infty} x e^{-\delta x} dx = \frac{\Gamma(2)}{\delta^2} = \frac{1}{\delta^2}.
+\end{equation}
+
+The sum $S'$ is, also according to [this post](http://math.stackexchange.com/questions/619902/how-can-i-resolve-sum-x-0-infty-xe-x-theta), computed as:
+
+$$S' = \sum_{x=0}^{\infty} x e^{-\delta x} = \frac{e^{\delta}}{(e^{\delta} - 1)^2}.$$
+
+Using the definition of the hyperbolic sine, the above sum can also be written as:
+
+\begin{equation}
+	\label{sum_sinh}
+	S' = \frac{1}{4 \sinh^2 \frac{\delta}{2}}.
+\end{equation}
+
+Eq. (\ref{sum_sinh}) can be expanded in a Laurent series, as follows:
+
+\begin{equation}
+	\label{sum_final}
+	S' = \frac{1}{4 \sinh^2 \frac{\delta}{2}} = \frac{1}{\delta^2} - \frac{1}{12} + O(\delta^2),
+\end{equation}
+
+where $O(\delta^2)$ is a polynomial of $\delta$ of order higher or equal to $2$. As a note, the above result of Eq. (\ref{sum_final}) can be obtained using [WolframAlpha](http://www.wolframalpha.com/) and entering the following:
+
+```
+laurent series ((sinh(x/2))^(-2))/4
+```
+
+Using Eqs. (\ref{integral_final}) and (\ref{sum_final}), the difference $S' - I'$ is:
+
+\begin{equation}
+	\label{difference_final}
+	S' - I' = - \frac{1}{12} + O(\delta^2).
+\end{equation}
+
+After this result is obtained, it is time to set $\delta$ back to zero and get the result of the original difference $S - I$. In Eq. (\ref{difference_final}), the terms of the sum and the integral that tend to infinity as $\delta$ tends to $0$ are canceled out, and the high-order polynomial term $O(\delta^2)$ tends to $0$ as $\delta$ tends to $0$, leaving only the finite term $-1/12$:
+
+\begin{equation}
+	\label{difference_final_2}
+	S - I = - \frac{1}{12}.
+\end{equation}
+
+According to Casimir \[[2](#Casimir ref_02)\], this finite negative result gives rise to an attractive force between two parallel conducting plates, which is the Casimir effect. However, as seen from Eq. (\ref{difference_final_2}), it is the difference $S - I$ that has a value of $-1/12$, not the infinite sum $S$, as stated in the string theory book \[[1](#ref_01)\]. This is also mentioned in Kingsbury's paper \[[3](#ref_03)\], where the Riemann zeta function is used to calculate the infinite sum $S$.  It is said that zeta function renormalization reaches the same result as that derived by Casimir, who used the above regularization, but *without subtracting the sum from the integral*, which *"suggests an important physical intuition for zeta renormalization: using the analytic continuation [...] in some sense corresponds to subtracting the electromagnetic field's inherent contribution to the ground state energy"*.
+
+This also corresponds to what is mentioned in [another Numberphile video](https://www.youtube.com/watch?v=0Oazb7IWzbA), that $-1/12$ is what is left if one removes the infinity from the sum $S$. Similarly, in [this post](https://terrytao.wordpress.com/2010/04/10/the-euler-maclaurin-formula-bernoulli-numbers-the-zeta-function-and-real-variable-analytic-continuation/), it is mentioned that the values of the Riemann zeta function for negative integers, such as $\zeta(-1) = -1/12$, are *"nothing more than the constant terms of the asymptotic expansion of the smoothed partial sums"*.
+
+
+## References
+
+1. <a name="ref_01"></a> Joseph Polchinski, String theory, vol. 1.
+2. <a name="ref_02"></a> H. B. G. Casimir, On the attraction between two perfectly conducting plates, 1948.
+3. <a name="ref_03"></a> Kingsbury, Kyle, The Casimir Effect, 2009
+4. <a name="ref_04"></a> M. Bordag, U. Mohideen, V.M. Mostepanenko, New developments in the Casimir effect, 2001.
+

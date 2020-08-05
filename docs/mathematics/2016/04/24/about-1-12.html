@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>About -1/12</title>
+  <meta name="description" content="These notes are about the famous and odd result that the sum of all natural numbers is $-1/12$:orThis result and a proof was presented in a Numberphille vide...">
+
+  <link rel="stylesheet" href="/blog/css/main.css">
+  <link rel="canonical" href="http://yourdomain.com/blog/mathematics/2016/04/24/about-1-12.html">
+  <link rel="alternate" type="application/rss+xml" title="Kal archives" href="http://yourdomain.com/blog/feed.xml">
+</head>
+
+
+  <body>
+
+	<script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$','$'], ['\\(','\\)']],
+          processEscapes: true,
+        },
+		TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/blog/">Kal archives</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/blog/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">About -1/12</h1>
+    <p class="post-meta"><time datetime="2016-04-24T00:00:00+03:00" itemprop="datePublished">Apr 24, 2016</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>These notes are about the famous and odd result that the sum of all natural numbers is $-1/12$:</p>
+
+<script type="math/tex; mode=display">1 + 2 + 3 + \ldots = - \frac{1}{12},</script>
+
+<p>or</p>
+
+<script type="math/tex; mode=display">\sum_{n=0}^{\infty} n = - \frac{1}{12}.</script>
+
+<p>This result and a proof was presented in a <a href="https://www.youtube.com/watch?v=w-I6XTVZXww">Numberphille video</a>. This video mentions a book about string theory [<a href="#ref_01">1</a>, page 22], which makes use of this result. In this book, the author arrives at the result by introducing a smoothing factor in the sum, as was also done by Casimir in his paper about the effect named after him [<a href="#ref_02">2</a>]. However, Casimir did not calculate the value of the infinite sum, but the value of the difference between the infinite sum and an infinite integral, and this was found to be proportional to $-1/12$, up to some physical constants.</p>
+
+<p>In a simplified version, which is different in form (as also shown in a paper by Kingsbury [<a href="#ref_03">3</a>]) but similar in concept, Casimir calculated the difference between</p>
+
+<script type="math/tex; mode=display">S = \sum_{x=0}^{\infty} x</script>
+
+<p>and</p>
+
+<script type="math/tex; mode=display">I = \int_{0}^{\infty} x dx.</script>
+
+<p>In order to solve this, he introduced a smoothing factor $e^{-\delta x}$ in both the sum and the integral:</p>
+
+<script type="math/tex; mode=display">S' = \sum_{x=0}^{\infty} x e^{-\delta x}, \quad I' = \int_{0}^{\infty} x e^{-\delta x} dx.</script>
+
+<p>This smoothing factor has the property that when $\delta$ tends to $0$, the factor becomes $1$, and the sum and integral return to their original forms. Thus, this factor can be introduced in order for a result to be reached, and then $\delta$ can be set to $0$, in order to remove the effect of the smoothing factor.</p>
+
+<p>Casimir used the Euler-Maclaurin formula to evaluate the difference $S’ - I’$, which, letting $f(x) = x e^{-\delta x}$, is (see <a href="https://en.wikipedia.org/wiki/Euler%E2%80%93Maclaurin_formula">Wikipedia</a>):</p>
+
+<script type="math/tex; mode=display">S' - I' = \sum_{k=1}^p \frac{B_k}{k!} \left ( f^{(k-1)}(\infty) - f^{(k-1)}(0) \right ),</script>
+
+<p>where $B_k$ is the $k$th Bernoulli number and $p$ is how many times function $f$ can be differentiated.</p>
+
+<p>However, here we will take another course, by evaluating the sum and the integral separately and then computing their difference, in a way similar to what is shown in a paper by Bordag et al. [<a href="#ref_04">4</a>]</p>
+
+<p>The integral $I’$ is a special case of</p>
+
+<script type="math/tex; mode=display">\int_{0}^{\infty} x^n e^{-\delta x} dx = \frac{\Gamma(n+1)}{\delta^{n+1}},</script>
+
+<p>for $n = 1$. So</p>
+
+<p>\begin{equation}
+	\label{integral_final}
+	I’ = \int_{0}^{\infty} x e^{-\delta x} dx = \frac{\Gamma(2)}{\delta^2} = \frac{1}{\delta^2}.
+\end{equation}</p>
+
+<p>The sum $S’$ is, also according to <a href="http://math.stackexchange.com/questions/619902/how-can-i-resolve-sum-x-0-infty-xe-x-theta">this post</a>, computed as:</p>
+
+<script type="math/tex; mode=display">S' = \sum_{x=0}^{\infty} x e^{-\delta x} = \frac{e^{\delta}}{(e^{\delta} - 1)^2}.</script>
+
+<p>Using the definition of the hyperbolic sine, the above sum can also be written as:</p>
+
+<p>\begin{equation}
+	\label{sum_sinh}
+	S’ = \frac{1}{4 \sinh^2 \frac{\delta}{2}}.
+\end{equation}</p>
+
+<p>Eq. (\ref{sum_sinh}) can be expanded in a Laurent series, as follows:</p>
+
+<p>\begin{equation}
+	\label{sum_final}
+	S’ = \frac{1}{4 \sinh^2 \frac{\delta}{2}} = \frac{1}{\delta^2} - \frac{1}{12} + O(\delta^2),
+\end{equation}</p>
+
+<p>where $O(\delta^2)$ is a polynomial of $\delta$ of order higher or equal to $2$. As a note, the above result of Eq. (\ref{sum_final}) can be obtained using <a href="http://www.wolframalpha.com/">WolframAlpha</a> and entering the following:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>laurent series ((sinh(x/2))^(-2))/4
+</code></pre></div></div>
+
+<p>Using Eqs. (\ref{integral_final}) and (\ref{sum_final}), the difference $S’ - I’$ is:</p>
+
+<p>\begin{equation}
+	\label{difference_final}
+	S’ - I’ = - \frac{1}{12} + O(\delta^2).
+\end{equation}</p>
+
+<p>After this result is obtained, it is time to set $\delta$ back to zero and get the result of the original difference $S - I$. In Eq. (\ref{difference_final}), the terms of the sum and the integral that tend to infinity as $\delta$ tends to $0$ are canceled out, and the high-order polynomial term $O(\delta^2)$ tends to $0$ as $\delta$ tends to $0$, leaving only the finite term $-1/12$:</p>
+
+<p>\begin{equation}
+	\label{difference_final_2}
+	S - I = - \frac{1}{12}.
+\end{equation}</p>
+
+<p>According to Casimir [<a href="#Casimir ref_02">2</a>], this finite negative result gives rise to an attractive force between two parallel conducting plates, which is the Casimir effect. However, as seen from Eq. (\ref{difference_final_2}), it is the difference $S - I$ that has a value of $-1/12$, not the infinite sum $S$, as stated in the string theory book [<a href="#ref_01">1</a>]. This is also mentioned in Kingsbury’s paper [<a href="#ref_03">3</a>], where the Riemann zeta function is used to calculate the infinite sum $S$.  It is said that zeta function renormalization reaches the same result as that derived by Casimir, who used the above regularization, but <em>without subtracting the sum from the integral</em>, which <em>“suggests an important physical intuition for zeta renormalization: using the analytic continuation […] in some sense corresponds to subtracting the electromagnetic field’s inherent contribution to the ground state energy”</em>.</p>
+
+<p>This also corresponds to what is mentioned in <a href="https://www.youtube.com/watch?v=0Oazb7IWzbA">another Numberphile video</a>, that $-1/12$ is what is left if one removes the infinity from the sum $S$. Similarly, in <a href="https://terrytao.wordpress.com/2010/04/10/the-euler-maclaurin-formula-bernoulli-numbers-the-zeta-function-and-real-variable-analytic-continuation/">this post</a>, it is mentioned that the values of the Riemann zeta function for negative integers, such as $\zeta(-1) = -1/12$, are <em>“nothing more than the constant terms of the asymptotic expansion of the smoothed partial sums”</em>.</p>
+
+<h2 id="references">References</h2>
+
+<ol>
+  <li><a name="ref_01"></a> Joseph Polchinski, String theory, vol. 1.</li>
+  <li><a name="ref_02"></a> H. B. G. Casimir, On the attraction between two perfectly conducting plates, 1948.</li>
+  <li><a name="ref_03"></a> Kingsbury, Kyle, The Casimir Effect, 2009</li>
+  <li><a name="ref_04"></a> M. Bordag, U. Mohideen, V.M. Mostepanenko, New developments in the Casimir effect, 2001.</li>
+</ol>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Kal archives</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>Kal archives</li>
+          <li><a href="mailto:elkalamaras@gmail.com">elkalamaras@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Notes about mathematics, statistics, etc.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

@@ -1,28 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Your awesome title</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+    <title>Kal archives</title>
+    <description>Notes about mathematics, statistics, etc.
 </description>
     <link>http://yourdomain.com/blog/</link>
     <atom:link href="http://yourdomain.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 05 Aug 2020 14:58:23 +0300</pubDate>
-    <lastBuildDate>Wed, 05 Aug 2020 14:58:23 +0300</lastBuildDate>
+    <pubDate>Thu, 06 Aug 2020 01:48:03 +0300</pubDate>
+    <lastBuildDate>Thu, 06 Aug 2020 01:48:03 +0300</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
         <title>Welcome to Jekyll!</title>
         <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;e^{i\pi} = -1&lt;/script&gt;
+
 &lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
 
 &lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
 
@@ -35,6 +38,111 @@
         <category>jekyll</category>
         
         <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>About -1/12</title>
+        <description>&lt;p&gt;These notes are about the famous and odd result that the sum of all natural numbers is $-1/12$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;1 + 2 + 3 + \ldots = - \frac{1}{12},&lt;/script&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\sum_{n=0}^{\infty} n = - \frac{1}{12}.&lt;/script&gt;
+
+&lt;p&gt;This result and a proof was presented in a &lt;a href=&quot;https://www.youtube.com/watch?v=w-I6XTVZXww&quot;&gt;Numberphille video&lt;/a&gt;. This video mentions a book about string theory [&lt;a href=&quot;#ref_01&quot;&gt;1&lt;/a&gt;, page 22], which makes use of this result. In this book, the author arrives at the result by introducing a smoothing factor in the sum, as was also done by Casimir in his paper about the effect named after him [&lt;a href=&quot;#ref_02&quot;&gt;2&lt;/a&gt;]. However, Casimir did not calculate the value of the infinite sum, but the value of the difference between the infinite sum and an infinite integral, and this was found to be proportional to $-1/12$, up to some physical constants.&lt;/p&gt;
+
+&lt;p&gt;In a simplified version, which is different in form (as also shown in a paper by Kingsbury [&lt;a href=&quot;#ref_03&quot;&gt;3&lt;/a&gt;]) but similar in concept, Casimir calculated the difference between&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;S = \sum_{x=0}^{\infty} x&lt;/script&gt;
+
+&lt;p&gt;and&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;I = \int_{0}^{\infty} x dx.&lt;/script&gt;
+
+&lt;p&gt;In order to solve this, he introduced a smoothing factor $e^{-\delta x}$ in both the sum and the integral:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;S&#39; = \sum_{x=0}^{\infty} x e^{-\delta x}, \quad I&#39; = \int_{0}^{\infty} x e^{-\delta x} dx.&lt;/script&gt;
+
+&lt;p&gt;This smoothing factor has the property that when $\delta$ tends to $0$, the factor becomes $1$, and the sum and integral return to their original forms. Thus, this factor can be introduced in order for a result to be reached, and then $\delta$ can be set to $0$, in order to remove the effect of the smoothing factor.&lt;/p&gt;
+
+&lt;p&gt;Casimir used the Euler-Maclaurin formula to evaluate the difference $S’ - I’$, which, letting $f(x) = x e^{-\delta x}$, is (see &lt;a href=&quot;https://en.wikipedia.org/wiki/Euler%E2%80%93Maclaurin_formula&quot;&gt;Wikipedia&lt;/a&gt;):&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;S&#39; - I&#39; = \sum_{k=1}^p \frac{B_k}{k!} \left ( f^{(k-1)}(\infty) - f^{(k-1)}(0) \right ),&lt;/script&gt;
+
+&lt;p&gt;where $B_k$ is the $k$th Bernoulli number and $p$ is how many times function $f$ can be differentiated.&lt;/p&gt;
+
+&lt;p&gt;However, here we will take another course, by evaluating the sum and the integral separately and then computing their difference, in a way similar to what is shown in a paper by Bordag et al. [&lt;a href=&quot;#ref_04&quot;&gt;4&lt;/a&gt;]&lt;/p&gt;
+
+&lt;p&gt;The integral $I’$ is a special case of&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\int_{0}^{\infty} x^n e^{-\delta x} dx = \frac{\Gamma(n+1)}{\delta^{n+1}},&lt;/script&gt;
+
+&lt;p&gt;for $n = 1$. So&lt;/p&gt;
+
+&lt;p&gt;\begin{equation}
+	\label{integral_final}
+	I’ = \int_{0}^{\infty} x e^{-\delta x} dx = \frac{\Gamma(2)}{\delta^2} = \frac{1}{\delta^2}.
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;The sum $S’$ is, also according to &lt;a href=&quot;http://math.stackexchange.com/questions/619902/how-can-i-resolve-sum-x-0-infty-xe-x-theta&quot;&gt;this post&lt;/a&gt;, computed as:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;S&#39; = \sum_{x=0}^{\infty} x e^{-\delta x} = \frac{e^{\delta}}{(e^{\delta} - 1)^2}.&lt;/script&gt;
+
+&lt;p&gt;Using the definition of the hyperbolic sine, the above sum can also be written as:&lt;/p&gt;
+
+&lt;p&gt;\begin{equation}
+	\label{sum_sinh}
+	S’ = \frac{1}{4 \sinh^2 \frac{\delta}{2}}.
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;Eq. (\ref{sum_sinh}) can be expanded in a Laurent series, as follows:&lt;/p&gt;
+
+&lt;p&gt;\begin{equation}
+	\label{sum_final}
+	S’ = \frac{1}{4 \sinh^2 \frac{\delta}{2}} = \frac{1}{\delta^2} - \frac{1}{12} + O(\delta^2),
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;where $O(\delta^2)$ is a polynomial of $\delta$ of order higher or equal to $2$. As a note, the above result of Eq. (\ref{sum_final}) can be obtained using &lt;a href=&quot;http://www.wolframalpha.com/&quot;&gt;WolframAlpha&lt;/a&gt; and entering the following:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;laurent series ((sinh(x/2))^(-2))/4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Using Eqs. (\ref{integral_final}) and (\ref{sum_final}), the difference $S’ - I’$ is:&lt;/p&gt;
+
+&lt;p&gt;\begin{equation}
+	\label{difference_final}
+	S’ - I’ = - \frac{1}{12} + O(\delta^2).
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;After this result is obtained, it is time to set $\delta$ back to zero and get the result of the original difference $S - I$. In Eq. (\ref{difference_final}), the terms of the sum and the integral that tend to infinity as $\delta$ tends to $0$ are canceled out, and the high-order polynomial term $O(\delta^2)$ tends to $0$ as $\delta$ tends to $0$, leaving only the finite term $-1/12$:&lt;/p&gt;
+
+&lt;p&gt;\begin{equation}
+	\label{difference_final_2}
+	S - I = - \frac{1}{12}.
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;According to Casimir [&lt;a href=&quot;#Casimir ref_02&quot;&gt;2&lt;/a&gt;], this finite negative result gives rise to an attractive force between two parallel conducting plates, which is the Casimir effect. However, as seen from Eq. (\ref{difference_final_2}), it is the difference $S - I$ that has a value of $-1/12$, not the infinite sum $S$, as stated in the string theory book [&lt;a href=&quot;#ref_01&quot;&gt;1&lt;/a&gt;]. This is also mentioned in Kingsbury’s paper [&lt;a href=&quot;#ref_03&quot;&gt;3&lt;/a&gt;], where the Riemann zeta function is used to calculate the infinite sum $S$.  It is said that zeta function renormalization reaches the same result as that derived by Casimir, who used the above regularization, but &lt;em&gt;without subtracting the sum from the integral&lt;/em&gt;, which &lt;em&gt;“suggests an important physical intuition for zeta renormalization: using the analytic continuation […] in some sense corresponds to subtracting the electromagnetic field’s inherent contribution to the ground state energy”&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;This also corresponds to what is mentioned in &lt;a href=&quot;https://www.youtube.com/watch?v=0Oazb7IWzbA&quot;&gt;another Numberphile video&lt;/a&gt;, that $-1/12$ is what is left if one removes the infinity from the sum $S$. Similarly, in &lt;a href=&quot;https://terrytao.wordpress.com/2010/04/10/the-euler-maclaurin-formula-bernoulli-numbers-the-zeta-function-and-real-variable-analytic-continuation/&quot;&gt;this post&lt;/a&gt;, it is mentioned that the values of the Riemann zeta function for negative integers, such as $\zeta(-1) = -1/12$, are &lt;em&gt;“nothing more than the constant terms of the asymptotic expansion of the smoothed partial sums”&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a name=&quot;ref_01&quot;&gt;&lt;/a&gt; Joseph Polchinski, String theory, vol. 1.&lt;/li&gt;
+  &lt;li&gt;&lt;a name=&quot;ref_02&quot;&gt;&lt;/a&gt; H. B. G. Casimir, On the attraction between two perfectly conducting plates, 1948.&lt;/li&gt;
+  &lt;li&gt;&lt;a name=&quot;ref_03&quot;&gt;&lt;/a&gt; Kingsbury, Kyle, The Casimir Effect, 2009&lt;/li&gt;
+  &lt;li&gt;&lt;a name=&quot;ref_04&quot;&gt;&lt;/a&gt; M. Bordag, U. Mohideen, V.M. Mostepanenko, New developments in the Casimir effect, 2001.&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Sun, 24 Apr 2016 00:00:00 +0300</pubDate>
+        <link>http://yourdomain.com/blog/mathematics/2016/04/24/about-1-12.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/blog/mathematics/2016/04/24/about-1-12.html</guid>
+        
+        
+        <category>mathematics</category>
         
       </item>
     
