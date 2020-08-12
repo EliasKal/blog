@@ -6,8 +6,8 @@
 </description>
     <link>http://yourdomain.com/blog/</link>
     <atom:link href="http://yourdomain.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 06 Aug 2020 02:01:31 +0300</pubDate>
-    <lastBuildDate>Thu, 06 Aug 2020 02:01:31 +0300</lastBuildDate>
+    <pubDate>Wed, 12 Aug 2020 12:40:26 +0300</pubDate>
+    <lastBuildDate>Wed, 12 Aug 2020 12:40:26 +0300</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -38,6 +38,116 @@
         <category>jekyll</category>
         
         <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Variational characterization of eigenvalues</title>
+        <description>&lt;p&gt;&lt;em&gt;Note: These notes refer to the &lt;a href=&quot;https://people.eecs.berkeley.edu/~luca/books/expanders-2016.pdf&quot;&gt;Lecture Notes on Graph Partitioning, Expanders and
+Spectral Methods&lt;/a&gt; by Luca Trevisan [&lt;a href=&quot;#ref_01&quot;&gt;1&lt;/a&gt;].&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Regarding Section 1.3, “Variational characterization of
+eigenvalues”, of Lecture 1, below is another way, maybe more 
+intuitive, to get the values of the eigenvalues from the
+Reyleigh quotient.&lt;/p&gt;
+
+&lt;p&gt;For a symmetric matrix $M \in \mathbb{R}^{n \times n}$ and a 
+vector $\mathbf{x}$, the Reyleigh quotient is:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;R_M(\mathbf{x}) = \frac{\mathbf{x}^T M \mathbf{x}}
+{\mathbf{x}^T \mathbf{x}}&lt;/script&gt;
+
+&lt;p&gt;Let $\lambda_{\text{min}} = \lambda_1 \leq \lambda_2 \leq \ldots
+\leq \lambda_n = \lambda_{\text{max}}$ be the eigenvalues of $M$
+and $\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n$ the
+corresponding unit length eigenvectors. The eigenvectors form 
+an orthonormal basis on which every vector $\mathbf{x}$ can be 
+expressed:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbf{x} = \sum_{i=1}^n \alpha_i \mathbf{v}_i,&lt;/script&gt;
+
+&lt;p&gt;where $\alpha_i$ is the $i$-th coordinate of $\mathbf{x}$ in the
+eigenvector basis.&lt;/p&gt;
+
+&lt;p&gt;The numerator of the Reyleigh quotient is:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbf{x}^T M \mathbf{x} =
+\left( \sum_{i=1}^n \alpha_i \mathbf{v}_i \right)^T M
+\left( \sum_{i=1}^n \alpha_i \mathbf{v}_i \right) = 
+\sum_{i=1}^n \alpha_i^2 \mathbf{v}_i^T M \mathbf{v}_i = 
+\sum_{i=1}^n \alpha_i^2 \lambda_i,&lt;/script&gt;
+
+&lt;p&gt;where the facts that the eigenvectors are orthogonal to each
+other and have a length of 1 have been used. Similarly, the
+denominator of the Reyleigh quotient is:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbf{x}^T \mathbf{x} = \sum_{i=1}^n \alpha_i^2.&lt;/script&gt;
+
+&lt;p&gt;The Reyleigh quotient thus becomes:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;R_M(\mathbf{x}) = \frac{\sum_{i=1}^n \alpha_i^2 \lambda_i}
+{\sum_{i=1}^n \alpha_i^2}&lt;/script&gt;
+
+&lt;p&gt;The above expression can be restructured in the following way:&lt;/p&gt;
+
+&lt;p&gt;\begin{equation}
+\label{eq:rq_weighted_average}
+R_M(\mathbf{x}) =
+\frac{\alpha_1^2}{\sum_{i=1}^n \alpha_i^2} \lambda_1 +
+\frac{\alpha_2^2}{\sum_{i=1}^n \alpha_i^2} \lambda_2 +
+\ldots +
+\frac{\alpha_n^2}{\sum_{i=1}^n \alpha_i^2} \lambda_n,
+\end{equation}
+from which it is apparent that the Reyleigh quotient is a
+weighted average of the eigenvalues.&lt;/p&gt;
+
+&lt;p&gt;Each weight $\alpha_k^2 / \sum_{i=1}^n \alpha_i^2$ takes values
+from 0 to 1 and the sum of all weights is 1. Therefore, the 
+lowest value of $R_M({\mathbf{x}})$ is obtained when all the
+weight is given to the smallest eigenvalue, $\lambda_1$, i.e.
+when $\alpha_1 = 1$ and $\alpha_k = 0, k \neq 1$. In other words,
+the minimum $R_M({\mathbf{x}})$ is obtained when $\mathbf{x}$ is
+equal (up to a scaling factor) to $\mathbf{v}_1$ and then the
+corresponding minimum value is $\lambda_1$. This leads to the
+following way to express the smallest eigenvalue of a matrix 
+$M$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\lambda_1 = \min_{\mathbf{x}} R_M(\mathbf{x}).&lt;/script&gt;
+
+&lt;p&gt;Returning to Eq. \eqref{eq:rq_weighted_average}, if $\alpha_1$
+is set to 0, then the minimum value of the Reyleigh quotient is
+the second smallest eigenvalue, $\lambda_2$, which is obtained
+when all weight is given to $\lambda_2$, i.e. when
+$\alpha_2 = 1$ and $\alpha_k = 0, k \neq 2$. Setting $\alpha_1$
+to 0 means that only the $\mathbf{x}$ vectors that are
+orthogonal to $\mathbf{v}_1$ are considered. This leads to the
+following expression for $\lambda_2$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\lambda_2 = \min_{\mathbf{x}: \mathbf{x} \perp \mathbf{v}_1}
+R_M(\mathbf{x}).&lt;/script&gt;
+
+&lt;p&gt;Similar expressions can be obtained for the other eigenvalues:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\lambda_3 = \min_{\mathbf{x}: \mathbf{x} \perp 
+\mathbf{v}_1, \mathbf{x} \perp \mathbf{v}_2}
+R_M(\mathbf{x}),&lt;/script&gt;
+
+&lt;p&gt;etc. The $\mathbf{x}$ vector that minimizes each of the above
+expressions is the corresponding eigenvector.&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a name=&quot;ref_01&quot;&gt;&lt;/a&gt; Luca Trevisan, &lt;em&gt;Lecture Notes on Graph Partitioning, Expanders and Spectral Methods&lt;/em&gt;, University of California, Berkeley, 2016&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Wed, 28 Sep 2016 00:00:00 +0300</pubDate>
+        <link>http://yourdomain.com/blog/mathematics/2016/09/28/variational-eigenvalues.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/blog/mathematics/2016/09/28/variational-eigenvalues.html</guid>
+        
+        
+        <category>mathematics</category>
         
       </item>
     

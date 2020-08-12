@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Variational characterization of eigenvalues</title>
+  <meta name="description" content="Note: These notes refer to the Lecture Notes on Graph Partitioning, Expanders andSpectral Methods by Luca Trevisan [1].Regarding Section 1.3, “Variational ch...">
+
+  <link rel="stylesheet" href="/blog/css/main.css">
+  <link rel="canonical" href="http://yourdomain.com/blog/mathematics/2016/09/28/variational-eigenvalues.html">
+  <link rel="alternate" type="application/rss+xml" title="Kal archives" href="http://yourdomain.com/blog/feed.xml">
+</head>
+
+
+  <body>
+
+	<script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$','$'], ['\\(','\\)']],
+          processEscapes: true,
+        },
+		TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/blog/">Kal archives</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/blog/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Variational characterization of eigenvalues</h1>
+    <p class="post-meta"><time datetime="2016-09-28T00:00:00+03:00" itemprop="datePublished">Sep 28, 2016</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><em>Note: These notes refer to the <a href="https://people.eecs.berkeley.edu/~luca/books/expanders-2016.pdf">Lecture Notes on Graph Partitioning, Expanders and
+Spectral Methods</a> by Luca Trevisan [<a href="#ref_01">1</a>].</em></p>
+
+<p>Regarding Section 1.3, “Variational characterization of
+eigenvalues”, of Lecture 1, below is another way, maybe more 
+intuitive, to get the values of the eigenvalues from the
+Reyleigh quotient.</p>
+
+<p>For a symmetric matrix $M \in \mathbb{R}^{n \times n}$ and a 
+vector $\mathbf{x}$, the Reyleigh quotient is:</p>
+
+<script type="math/tex; mode=display">R_M(\mathbf{x}) = \frac{\mathbf{x}^T M \mathbf{x}}
+{\mathbf{x}^T \mathbf{x}}</script>
+
+<p>Let $\lambda_{\text{min}} = \lambda_1 \leq \lambda_2 \leq \ldots
+\leq \lambda_n = \lambda_{\text{max}}$ be the eigenvalues of $M$
+and $\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n$ the
+corresponding unit length eigenvectors. The eigenvectors form 
+an orthonormal basis on which every vector $\mathbf{x}$ can be 
+expressed:</p>
+
+<script type="math/tex; mode=display">\mathbf{x} = \sum_{i=1}^n \alpha_i \mathbf{v}_i,</script>
+
+<p>where $\alpha_i$ is the $i$-th coordinate of $\mathbf{x}$ in the
+eigenvector basis.</p>
+
+<p>The numerator of the Reyleigh quotient is:</p>
+
+<script type="math/tex; mode=display">\mathbf{x}^T M \mathbf{x} =
+\left( \sum_{i=1}^n \alpha_i \mathbf{v}_i \right)^T M
+\left( \sum_{i=1}^n \alpha_i \mathbf{v}_i \right) = 
+\sum_{i=1}^n \alpha_i^2 \mathbf{v}_i^T M \mathbf{v}_i = 
+\sum_{i=1}^n \alpha_i^2 \lambda_i,</script>
+
+<p>where the facts that the eigenvectors are orthogonal to each
+other and have a length of 1 have been used. Similarly, the
+denominator of the Reyleigh quotient is:</p>
+
+<script type="math/tex; mode=display">\mathbf{x}^T \mathbf{x} = \sum_{i=1}^n \alpha_i^2.</script>
+
+<p>The Reyleigh quotient thus becomes:</p>
+
+<script type="math/tex; mode=display">R_M(\mathbf{x}) = \frac{\sum_{i=1}^n \alpha_i^2 \lambda_i}
+{\sum_{i=1}^n \alpha_i^2}</script>
+
+<p>The above expression can be restructured in the following way:</p>
+
+<p>\begin{equation}
+\label{eq:rq_weighted_average}
+R_M(\mathbf{x}) =
+\frac{\alpha_1^2}{\sum_{i=1}^n \alpha_i^2} \lambda_1 +
+\frac{\alpha_2^2}{\sum_{i=1}^n \alpha_i^2} \lambda_2 +
+\ldots +
+\frac{\alpha_n^2}{\sum_{i=1}^n \alpha_i^2} \lambda_n,
+\end{equation}
+from which it is apparent that the Reyleigh quotient is a
+weighted average of the eigenvalues.</p>
+
+<p>Each weight $\alpha_k^2 / \sum_{i=1}^n \alpha_i^2$ takes values
+from 0 to 1 and the sum of all weights is 1. Therefore, the 
+lowest value of $R_M({\mathbf{x}})$ is obtained when all the
+weight is given to the smallest eigenvalue, $\lambda_1$, i.e.
+when $\alpha_1 = 1$ and $\alpha_k = 0, k \neq 1$. In other words,
+the minimum $R_M({\mathbf{x}})$ is obtained when $\mathbf{x}$ is
+equal (up to a scaling factor) to $\mathbf{v}_1$ and then the
+corresponding minimum value is $\lambda_1$. This leads to the
+following way to express the smallest eigenvalue of a matrix 
+$M$:</p>
+
+<script type="math/tex; mode=display">\lambda_1 = \min_{\mathbf{x}} R_M(\mathbf{x}).</script>
+
+<p>Returning to Eq. \eqref{eq:rq_weighted_average}, if $\alpha_1$
+is set to 0, then the minimum value of the Reyleigh quotient is
+the second smallest eigenvalue, $\lambda_2$, which is obtained
+when all weight is given to $\lambda_2$, i.e. when
+$\alpha_2 = 1$ and $\alpha_k = 0, k \neq 2$. Setting $\alpha_1$
+to 0 means that only the $\mathbf{x}$ vectors that are
+orthogonal to $\mathbf{v}_1$ are considered. This leads to the
+following expression for $\lambda_2$:</p>
+
+<script type="math/tex; mode=display">\lambda_2 = \min_{\mathbf{x}: \mathbf{x} \perp \mathbf{v}_1}
+R_M(\mathbf{x}).</script>
+
+<p>Similar expressions can be obtained for the other eigenvalues:</p>
+
+<script type="math/tex; mode=display">\lambda_3 = \min_{\mathbf{x}: \mathbf{x} \perp 
+\mathbf{v}_1, \mathbf{x} \perp \mathbf{v}_2}
+R_M(\mathbf{x}),</script>
+
+<p>etc. The $\mathbf{x}$ vector that minimizes each of the above
+expressions is the corresponding eigenvector.</p>
+
+<h2 id="references">References</h2>
+
+<ol>
+  <li><a name="ref_01"></a> Luca Trevisan, <em>Lecture Notes on Graph Partitioning, Expanders and Spectral Methods</em>, University of California, Berkeley, 2016</li>
+</ol>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Kal archives</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>Kal archives</li>
+          <li><a href="mailto:elkalamaras@gmail.com">elkalamaras@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Notes about mathematics, statistics, etc.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
